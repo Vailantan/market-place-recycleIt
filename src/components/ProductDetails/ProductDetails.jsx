@@ -1,4 +1,4 @@
-import { useState,useContext } from "react";
+import { useState,useContext ,useEffect} from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { MyContext } from "../../App";
@@ -9,7 +9,7 @@ import { useNavigate } from 'react-router-dom';
 const ProductDetails = ({ selectedProduct }) => {
   const { value } = useContext(MyContext);
   const [src, setSrc] = value;
-  setSrc("result.glb")
+  
   console.log(` from product details ${selectedProduct}`)
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -24,27 +24,51 @@ const ProductDetails = ({ selectedProduct }) => {
     toast.success("Product has been added to cart!");
   };
 
-  return (
-    <section className="product-page">
-      <Container>
-        <Row className="justify-content-center">
-          <Col md={6}>
-          <img
-                style={{
-                  position: "absolute",
-                  width: "30px",
-                  top: "-104px",
-                  left: "339px",
-                }}
-                alt="3d model"
-                src="https://i.imgur.com/eJPLY5y_d.webp?maxwidth=760&fidelity=grand"
-                onClick={() => {
-                  setDisplayModel(true);
-                  navigate("/test")
+  useEffect(() => {
+   
+   if(selectedProduct.modelUrl==="")
+ {
+  setDisplayModel(false);
+  console.log("url is empty")
+  
+ }
+ else
+ {
+  setDisplayModel(true);
+  setSrc(selectedProduct.modelUrl);
+  console.log(src)
+ }
 
-                }}
-              />
-            <img loading="lazy" src={selectedProduct?.imgUrl} alt="" />
+  }, [selectedProduct]);
+
+
+  return (
+    <div className="product-page">
+      <Container>
+   {  displayModel && 
+      <img 
+      style={{
+        position: "relative",
+        width: "40px",
+        left:"85%",
+        
+        marginTop:"10px"
+      }}
+      alt="3d model"
+      src="https://i.imgur.com/eJPLY5y_d.webp?maxwidth=760&fidelity=grand"
+      onClick={() => {
+        setDisplayModel(true);
+        navigate("/test")
+
+      }}
+    />
+   }
+ 
+        <Row className="justify-content-center">
+       
+          <Col md={6}>
+         
+            <img style={{marginTop:"15px"}} loading="lazy" src={selectedProduct?.imgUrl} alt="" />
           </Col>
           <Col md={6}>
             <h2>{selectedProduct?.productName}</h2>
@@ -62,13 +86,14 @@ const ProductDetails = ({ selectedProduct }) => {
               type="submit"
               className="add"
               onClick={() => handelAdd(selectedProduct, quantity)}
+              style={{marginTop:"20px"}}
             >
               Add To Cart
             </button>
           </Col>
         </Row>
       </Container>
-    </section>
+    </div>
   );
 };
 

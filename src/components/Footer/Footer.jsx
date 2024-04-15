@@ -25,7 +25,7 @@ const Footer = () => {
           <Col md={3} sm={5} className="box">
             <div className="logo">
               <ion-icon name="bag"></ion-icon>
-              <h1>E-Connect</h1>
+              <h1>Recycle-It</h1>
             </div>
             <p>Recycles Waste, Market place for the user to buy and sell the products </p>
           </Col>

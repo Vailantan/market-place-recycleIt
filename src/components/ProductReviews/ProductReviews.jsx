@@ -5,7 +5,7 @@ import "./product-review.css";
 const ProductReviews = ({ selectedProduct }) => {
   const [listSelected, setListSelected] = useState("desc");
   return (
-    <section className="product-reviews">
+    <div className="product-reviews">
       <Container>
         <ul>
           <li
@@ -35,7 +35,7 @@ const ProductReviews = ({ selectedProduct }) => {
           </div>
         )}
       </Container>
-    </section>
+    </div>
   );
 };
 

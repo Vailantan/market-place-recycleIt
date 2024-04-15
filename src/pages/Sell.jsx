@@ -71,7 +71,7 @@ const handleDescriptionChange = (e) => {
       console.log("Image URL:", imageUrl);
       console.log("Video URL:", videoUrl);
 
-      // Reset file inputs
+     
       setImage(null);
       setVideo(null);
       
