@@ -18,11 +18,12 @@ const NavBar = () => {
   window.addEventListener("scroll", scrollHandler);
  
   return (
+
     <Navbar
       fixed="top"
       expand="md"
       className={isFixed ? "navbar fixed" : "navbar"}
-      style={{marginTop:"50px"}}
+      
     >
       <Container className="navbar-container">
         <Navbar.Brand to="/">
@@ -137,6 +138,7 @@ const NavBar = () => {
         </Navbar.Collapse>
       </Container>
     </Navbar>
+
   );
 };
 
