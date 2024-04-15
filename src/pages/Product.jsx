@@ -20,7 +20,7 @@ const Product = () => {
   useEffect(() => {
     const fetchData = async () => {
       try { 
-        const response = await fetch('http://192.168.217.49:8000/all-products');
+        const response = await fetch('https://vailantan.pythonanywhere.com/all-products');
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
