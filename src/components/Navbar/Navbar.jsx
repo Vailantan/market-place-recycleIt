@@ -22,6 +22,7 @@ const NavBar = () => {
       fixed="top"
       expand="md"
       className={isFixed ? "navbar fixed" : "navbar"}
+      style={{marginTop:"50px"}}
     >
       <Container className="navbar-container">
         <Navbar.Brand to="/">
