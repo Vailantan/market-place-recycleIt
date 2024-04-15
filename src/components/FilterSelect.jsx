@@ -39,7 +39,7 @@ const FilterSelect = ({setFilterList}) => {
     const handleChange = async (selectedOption)=> {
 
         try { 
-            const response = await fetch('http://127.0.0.1:8000/all-products');
+            const response = await fetch('https://vailantan.pythonanywhere.com/all-products');
             if (!response.ok) {
               throw new Error('Network response was not ok');
             }
