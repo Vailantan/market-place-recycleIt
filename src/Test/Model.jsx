@@ -14,14 +14,19 @@ function Model() {
       modelViewer.cameraControls = true;
       modelViewer.ar = true;
       modelViewer['ar-modes'] = 'webxr';
+      modelViewer.shadowIntensity = 1; // Set shadow intensity
+      modelViewer.shadowSoftness = 1; // Set shadow softness
+      modelViewer.style.setProperty('--model-viewer-shadow-color', 'rgba(0, 0, 0, 0.4)')
       return () => {
      
       };
     }, []);
   
     return (
-        <div>
-        <model-viewer ref={modelViewerRef}></model-viewer>
+
+        <div style={{display:"flex",justifyContent:"center",marginTop:"10%",height: "400px"
+      }}>
+        <model-viewer style={{width: "368px",height: "347px"}} ref={modelViewerRef}></model-viewer>
         </div>
     );
 }
