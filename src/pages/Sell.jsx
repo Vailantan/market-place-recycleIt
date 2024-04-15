@@ -236,7 +236,7 @@ const handleDescriptionChange = (e) => {
             <Button style={{marginRight:"3px"}} variant="contained" color="primary" onClick={() => handleClick()} >
             Upload
           </Button>
-            <Button variant="contained" color="success" onClick={sellProduct}>
+            <Button variant="contained" style={{backgroundColor:"#425C5A"}} onClick={sellProduct}>
             Sell
           </Button>
           </div>

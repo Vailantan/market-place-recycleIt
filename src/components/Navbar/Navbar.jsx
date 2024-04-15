@@ -18,16 +18,17 @@ const NavBar = () => {
   window.addEventListener("scroll", scrollHandler);
  
   return (
+<>
 
     <Navbar
       fixed="top"
       expand="md"
       className={isFixed ? "navbar fixed" : "navbar"}
-      
+   
     >
-      <Container className="navbar-container">
+      <Container className="navbar-container"  style={{marginTop:"50px"}}>
         <Navbar.Brand to="/">
-          <ion-icon name="bag"></ion-icon>
+          <ion-icon name="bag" ></ion-icon>
           <h1 className="logo">Recycle-It</h1>
         </Navbar.Brand>
         {/* Media cart and toggle */}
@@ -138,6 +139,7 @@ const NavBar = () => {
         </Navbar.Collapse>
       </Container>
     </Navbar>
+    </>
 
   );
 };

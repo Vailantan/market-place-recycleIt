@@ -22,6 +22,7 @@ function App() {
     <MyContext.Provider value={{value:[src,setSrc]}}>
     <Suspense fallback={<Loader />}>
       <Router>
+   
         <ToastContainer
           position="top-right"
           autoClose={1000}
